@@ -82,31 +82,31 @@ Create a blank github repo for the site. For my use">
 source in. I picked <tt class="docutils literal"><span class="pre">site-src</span></tt>; the <a class="reference external" href="https://getnikola.com/handbook.html#deploying-to-github">documentation suggests</a> <tt class="docutils literal">deploy</tt>.
 Whatever name you choose, this will be the branch that you will keep checked
 out and use for authoring.</p>
-<pre class="code text"><a name="rest_code_cc84b98a179b4283b05537a844b2bdcc-1"></a>git clone git@github.com:jean/YOURSITE.github.io.git
-<a name="rest_code_cc84b98a179b4283b05537a844b2bdcc-2"></a>cd YOURSITE.github.io
-<a name="rest_code_cc84b98a179b4283b05537a844b2bdcc-3"></a>git checkout -b site-src
-<a name="rest_code_cc84b98a179b4283b05537a844b2bdcc-4"></a>git push origin site-src
+<pre class="code bash"><a name="rest_code_dec156367d8248eea6110540636784cc-1"></a>git clone git@github.com:USER/YOURSITE.github.io.git
+<a name="rest_code_dec156367d8248eea6110540636784cc-2"></a><span class="nb">cd </span>YOURSITE.github.io
+<a name="rest_code_dec156367d8248eea6110540636784cc-3"></a>git checkout -b site-src
+<a name="rest_code_dec156367d8248eea6110540636784cc-4"></a>git push origin site-src
 </pre>
 <p>Create the Nikola site. In my case I prefer to install Nikola into a
 <em>virtualenv</em> local to the site. Nikola is dropping support for Python 2 soon,
 so use Python 3.</p>
-<pre class="code text"><a name="rest_code_a804e6686572475399df036de4656ce2-1"></a>virtualenv -p `which python3` .
-<a name="rest_code_a804e6686572475399df036de4656ce2-2"></a>. bin/activate
-<a name="rest_code_a804e6686572475399df036de4656ce2-3"></a>pip install nikola
-<a name="rest_code_a804e6686572475399df036de4656ce2-4"></a>nikola init YOURSITE
-<a name="rest_code_a804e6686572475399df036de4656ce2-5"></a>echo "
-<a name="rest_code_a804e6686572475399df036de4656ce2-6"></a>    include/
-<a name="rest_code_a804e6686572475399df036de4656ce2-7"></a>    lib/
-<a name="rest_code_a804e6686572475399df036de4656ce2-8"></a>    pip-selfcheck.json
-<a name="rest_code_a804e6686572475399df036de4656ce2-9"></a>    share/
-<a name="rest_code_a804e6686572475399df036de4656ce2-10"></a>    YOURSITE/cache
-<a name="rest_code_a804e6686572475399df036de4656ce2-11"></a>    YOURSITE/output
-<a name="rest_code_a804e6686572475399df036de4656ce2-12"></a>    YOURSITE/__pycache__
-<a name="rest_code_a804e6686572475399df036de4656ce2-13"></a>    YOURSITE/themes
-<a name="rest_code_a804e6686572475399df036de4656ce2-14"></a>    YOURSITE/.doit.db
-<a name="rest_code_a804e6686572475399df036de4656ce2-15"></a>    " &gt; .gitignore
-<a name="rest_code_a804e6686572475399df036de4656ce2-16"></a>git add YOURSITE
-<a name="rest_code_a804e6686572475399df036de4656ce2-17"></a>git commit -a -m "First commit"
+<pre class="code bash"><a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-1"></a>virtualenv -p <span class="sb">`</span>which python3<span class="sb">`</span> .
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-2"></a>. bin/activate
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-3"></a>pip install nikola
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-4"></a>nikola init YOURSITE
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-5"></a><span class="nb">echo</span> <span class="s2">"</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-6"></a><span class="s2">    include/</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-7"></a><span class="s2">    lib/</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-8"></a><span class="s2">    pip-selfcheck.json</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-9"></a><span class="s2">    share/</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-10"></a><span class="s2">    YOURSITE/cache</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-11"></a><span class="s2">    YOURSITE/output</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-12"></a><span class="s2">    YOURSITE/__pycache__</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-13"></a><span class="s2">    YOURSITE/themes</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-14"></a><span class="s2">    YOURSITE/.doit.db</span>
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-15"></a><span class="s2">    "</span> &gt; .gitignore
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-16"></a>git add YOURSITE
+<a name="rest_code_14bac6f6fed146b3b945bde7d0aee0e7-17"></a>git commit -a -m <span class="s2">"First commit"</span>
 </pre>
 <p>The default Nikola config assumes a project site (which publishes to the
 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> branch), so needs to be updated to use the user format. Edit
@@ -117,10 +117,10 @@ GITHUB_DEPLOY_BRANCH = 'master'
 </pre>
 <p>Now you're ready to start adding posts and pages. To do this, you need to be
 in the <tt class="docutils literal">YOURSITE</tt> directory:</p>
-<pre class="code text"><a name="rest_code_611fee34b82e4a4aaf7c5ea4493af6f0-1"></a>cd YOURSITE
-<a name="rest_code_611fee34b82e4a4aaf7c5ea4493af6f0-2"></a>nikola new_post
-<a name="rest_code_611fee34b82e4a4aaf7c5ea4493af6f0-3"></a># Edit post
-<a name="rest_code_611fee34b82e4a4aaf7c5ea4493af6f0-4"></a>nikola github_deploy
+<pre class="code bash"><a name="rest_code_f561e6093c084cac84d0e4ef8423f31a-1"></a><span class="nb">cd </span>YOURSITE
+<a name="rest_code_f561e6093c084cac84d0e4ef8423f31a-2"></a>nikola new_post
+<a name="rest_code_f561e6093c084cac84d0e4ef8423f31a-3"></a><span class="c"># Edit post</span>
+<a name="rest_code_f561e6093c084cac84d0e4ef8423f31a-4"></a>nikola github_deploy
 </pre>
 </div>
     </div>

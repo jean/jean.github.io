@@ -23,9 +23,9 @@ source in. I picked ``site-src``; the `documentation suggests
 Whatever name you choose, this will be the branch that you will keep checked
 out and use for authoring.
 
-.. code::
+.. code:: bash
 
-    git clone git@github.com:jean/YOURSITE.github.io.git
+    git clone git@github.com:USER/YOURSITE.github.io.git
     cd YOURSITE.github.io
     git checkout -b site-src
     git push origin site-src
@@ -34,7 +34,7 @@ Create the Nikola site. In my case I prefer to install Nikola into a
 *virtualenv* local to the site. Nikola is dropping support for Python 2 soon,
 so use Python 3.
 
-.. code::
+.. code:: bash
 
     virtualenv -p `which python3` .   
     . bin/activate
@@ -64,7 +64,7 @@ The default Nikola config assumes a project site (which publishes to the
 Now you're ready to start adding posts and pages. To do this, you need to be
 in the ``YOURSITE`` directory:
 
-.. code::
+.. code:: bash
 
    cd YOURSITE
    nikola new_post
