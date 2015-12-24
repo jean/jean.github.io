@@ -60,9 +60,66 @@ article: http://ogp.me/ns/article#
             </div>
             <hr></header><div class="e-content entry-content">
         <div>
-<p>Write your post here.</p>
-<p>Another new start.</p>
-<p>Does this work?</p>
+<p>The first post might as well be a write-up of configuring this blog.</p>
+<p>In my case, I wanted to use Nikola for a Github Pages user site.</p>
+<p>The steps are:</p>
+<ul class="simple">
+<li>Create a blank github repo for the site. For my user, that is
+<tt class="docutils literal"><span class="pre">https://github.com/jean/jean.github.io</span></tt>.</li>
+<li>Clone the repo and prepare the required branches. For a user site, Nikola
+will _deploy_ to the <tt class="docutils literal">master</tt> branch, so you need another branch to keep
+the site source in. I picked <tt class="docutils literal"><span class="pre">site-src</span></tt>; the <a class="reference external" href="https://getnikola.com/handbook.html#deploying-to-github">documentation suggests</a>
+<tt class="docutils literal">deploy</tt>. Whatever name you choose, this will be the branch that you will
+keep checked out and use for authoring.</li>
+</ul>
+<pre class="code text"><a name="rest_code_fad245f4f9ae44c188e21018ed2708e6-1"></a>git clone git@github.com:jean/YOURSITE.github.io.git
+<a name="rest_code_fad245f4f9ae44c188e21018ed2708e6-2"></a>cd YOURSITE.github.io
+<a name="rest_code_fad245f4f9ae44c188e21018ed2708e6-3"></a>git checkout -b site-src
+<a name="rest_code_fad245f4f9ae44c188e21018ed2708e6-4"></a>git push origin site-src
+</pre>
+<ul class="simple">
+<li>Create the Nikola site. In my case I prefer to install Nikola into a
+_virtualenv_ local to the site. Nikola is dropping support for Python 2
+soon, so use Python 3.</li>
+</ul>
+<pre class="code text"><a name="rest_code_27c63a14c7094c69b794c52943b0650c-1"></a>virtualenv -p `which python3` .
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-2"></a>. bin/activate
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-3"></a>pip install nikola
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-4"></a>nikola init YOURSITE
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-5"></a>echo "
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-6"></a>    include/
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-7"></a>    lib/
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-8"></a>    pip-selfcheck.json
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-9"></a>    share/
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-10"></a>    YOURSITE/cache
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-11"></a>    YOURSITE/output
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-12"></a>    YOURSITE/__pycache__
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-13"></a>    YOURSITE/themes
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-14"></a>    YOURSITE/.doit.db
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-15"></a>    " &gt; .gitignore
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-16"></a>git add YOURSITE
+<a name="rest_code_27c63a14c7094c69b794c52943b0650c-17"></a>git commit -a -m "First commit"
+</pre>
+<ul>
+<li>
+<p class="first">The default Nikola config assumes a project site (which publishes to the
+<tt class="docutils literal"><span class="pre">gh-pages</span></tt> branch), so needs to be updated to use the user format. Edit
+<tt class="docutils literal">YOURSITE/conf.py</tt>:</p>
+<pre class="literal-block">
+GITHUB_SOURCE_BRANCH = 'site-src' # Or whatever you picked.
+GITHUB_DEPLOY_BRANCH = 'master'
+</pre>
+</li>
+<li>
+<p class="first">Now you're ready to start adding posts and pages. To do this, you need to be
+in the <tt class="docutils literal">YOURSITE</tt> directory:</p>
+</li>
+</ul>
+<pre class="code text"><a name="rest_code_b3c61266904a4314a965ae6736caa5f0-1"></a>cd YOURSITE
+<a name="rest_code_b3c61266904a4314a965ae6736caa5f0-2"></a>nikola new_post
+<a name="rest_code_b3c61266904a4314a965ae6736caa5f0-3"></a># Edit post
+<a name="rest_code_b3c61266904a4314a965ae6736caa5f0-4"></a>nikola github_deploy
+</pre>
 </div>
         </div>
         </article>
