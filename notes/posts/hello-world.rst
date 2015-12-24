@@ -1,4 +1,4 @@
-.. title: Hello world
+.. title: Hello world (from Nikola)
 .. slug: hello-world
 .. date: 2015-12-24 16:43:53 UTC+07:00
 .. tags: 
@@ -12,7 +12,10 @@ The first post might as well be a write-up of configuring this blog.
 In my case, I wanted to use Nikola for a Github Pages *user* site.
 
 Setting up this site
-````````````````````
+--------------------
+
+Create the repository
+`````````````````````
 
 Create a blank github repo for the site. For my user, that is
 ``https://github.com/jean/jean.github.io``.
@@ -30,6 +33,9 @@ out and use for authoring.
     cd YOURSITE.github.io
     git checkout -b site-src
     git push origin site-src
+
+Bootstrap the site
+``````````````````
 
 Create the Nikola site. In my case I prefer to install Nikola into a
 *virtualenv* local to the site. Nikola is dropping support for Python 2 soon,
@@ -64,6 +70,9 @@ The default Nikola config assumes a *project* site (which publishes to the
       GITHUB_SOURCE_BRANCH = 'site-src' # Or whatever you picked.
       GITHUB_DEPLOY_BRANCH = 'master'
 
+Add content and publish
+```````````````````````
+
 Now you're ready to start adding posts and pages. To do this, you need to be
 in the ``YOURSITE`` directory:
 
@@ -85,6 +94,6 @@ one go:
    git commit -a -m "New post"
 
 In my case I also installed a theme (``nikola install_theme material-theme``),
-which requires another change to ``conf.py`` to activate the theme. I also
-activated `disqus <http://disqus.com>`_ as comments provider.
+and activated `disqus <http://disqus.com>`_ as comments provider. These 
+require some more changes to ``conf.py``.
 
