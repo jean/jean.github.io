@@ -1,3 +1,7 @@
+include/
+lib/
+pip-selfcheck.json
+share/
 notes/cache
 notes/output
 notes/__pycache__
