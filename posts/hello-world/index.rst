@@ -11,7 +11,8 @@ The first post might as well be a write-up of configuring this blog.
 
 In my case, I wanted to use Nikola for a Github Pages *user* site.
 
-The steps are:
+Setting up this site
+````````````````````
 
 Create a blank github repo for the site. For my user, that is
 ``https://github.com/jean/jean.github.io``.
