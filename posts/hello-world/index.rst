@@ -12,7 +12,10 @@ The first post might as well be a write-up of configuring this blog.
 In my case, I wanted to use Nikola for a Github Pages *user* site.
 
 Setting up this site
-````````````````````
+--------------------
+
+Create the repository
+`````````````````````
 
 Create a blank github repo for the site. For my user, that is
 ``https://github.com/jean/jean.github.io``.
@@ -30,6 +33,9 @@ out and use for authoring.
     cd YOURSITE.github.io
     git checkout -b site-src
     git push origin site-src
+
+Bootstrap the site
+``````````````````
 
 Create the Nikola site. In my case I prefer to install Nikola into a
 *virtualenv* local to the site. Nikola is dropping support for Python 2 soon,
@@ -63,6 +69,9 @@ The default Nikola config assumes a *project* site (which publishes to the
 
       GITHUB_SOURCE_BRANCH = 'site-src' # Or whatever you picked.
       GITHUB_DEPLOY_BRANCH = 'master'
+
+Add content and publish
+```````````````````````
 
 Now you're ready to start adding posts and pages. To do this, you need to be
 in the ``YOURSITE`` directory:
