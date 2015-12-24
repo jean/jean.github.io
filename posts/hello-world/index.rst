@@ -1,4 +1,4 @@
-.. title: Hello world
+.. title: Hello world (from Nikola)
 .. slug: hello-world
 .. date: 2015-12-24 16:43:53 UTC+07:00
 .. tags: 
