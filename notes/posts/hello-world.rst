@@ -9,7 +9,7 @@
 
 The first post might as well be a write-up of configuring this blog.
 
-In my case, I wanted to use Nikola for a Github Pages user site.
+In my case, I wanted to use Nikola for a Github Pages *user* site.
 
 The steps are:
 
@@ -74,8 +74,9 @@ in the ``YOURSITE`` directory:
    nikola github_deploy
 
 Nikola will build the static site in the ``output`` directory (by default) and
-push it to the ``master`` branch.  Note however that the source will not be
-automatically committed. You need to do this. To commit everything in one go:
+push it to the ``master`` branch at github.  Note however that the source will
+not be automatically committed. You need to do this. To commit everything in
+one go:
 
 .. code:: bash
 
