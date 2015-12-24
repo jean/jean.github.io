@@ -54,8 +54,8 @@ so use Python 3.
     git add YOURSITE
     git commit -a -m "First commit"
 
-The default Nikola config assumes a project site (which publishes to the
-``gh-pages`` branch), so needs to be updated to use the user format. Edit
+The default Nikola config assumes a *project* site (which publishes to the
+``gh-pages`` branch), so needs to be updated to use the *user* format. Edit
 ``YOURSITE/conf.py``.
 
 .. code:: python
@@ -73,4 +73,12 @@ in the ``YOURSITE`` directory:
    # Edit post
    nikola github_deploy
 
+Nikola will build the static site in the ``output`` directory (by default) and
+push it to the ``master`` branch.  Note however that the source will not be
+automatically committed. You need to do this. To commit everything in one go:
+
+.. code:: bash
+
+   git add .
+   git commit -a -m "New post"
 
