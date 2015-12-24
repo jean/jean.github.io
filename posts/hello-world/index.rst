@@ -84,3 +84,7 @@ one go:
    git add .
    git commit -a -m "New post"
 
+In my case I also installed a theme (``nikola install_theme material-theme``),
+which requires another change to ``conf.py`` to activate the theme. I also
+activated `disqus <http://disqus.com>`_ as comments provider.
+
