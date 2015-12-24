@@ -56,7 +56,9 @@ so use Python 3.
 
 The default Nikola config assumes a project site (which publishes to the
 ``gh-pages`` branch), so needs to be updated to use the user format. Edit
-``YOURSITE/conf.py``::
+``YOURSITE/conf.py``.
+
+.. code:: python
 
       GITHUB_SOURCE_BRANCH = 'site-src' # Or whatever you picked.
       GITHUB_DEPLOY_BRANCH = 'master'
