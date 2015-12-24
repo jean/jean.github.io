@@ -84,55 +84,55 @@ Create a blank github repo for the site. For">
 source in. I picked <tt class="docutils literal"><span class="pre">site-src</span></tt>; the <a class="reference external" href="https://getnikola.com/handbook.html#deploying-to-github">documentation suggests</a> <tt class="docutils literal">deploy</tt>.
 Whatever name you choose, this will be the branch that you will keep checked
 out and use for authoring.</p>
-<pre class="code bash"><a name="rest_code_1c20dae9d684420d9183ad421d050d9e-1"></a>git clone git@github.com:USER/YOURSITE.github.io.git
-<a name="rest_code_1c20dae9d684420d9183ad421d050d9e-2"></a><span class="nb">cd </span>YOURSITE.github.io
-<a name="rest_code_1c20dae9d684420d9183ad421d050d9e-3"></a>git checkout -b site-src
-<a name="rest_code_1c20dae9d684420d9183ad421d050d9e-4"></a>git push origin site-src
+<pre class="code bash"><a name="rest_code_ebfc76d23a52490ea30e52af2076d086-1"></a>git clone git@github.com:USER/YOURSITE.github.io.git
+<a name="rest_code_ebfc76d23a52490ea30e52af2076d086-2"></a><span class="nb">cd </span>YOURSITE.github.io
+<a name="rest_code_ebfc76d23a52490ea30e52af2076d086-3"></a>git checkout -b site-src
+<a name="rest_code_ebfc76d23a52490ea30e52af2076d086-4"></a>git push origin site-src
 </pre>
 <p>Create the Nikola site. In my case I prefer to install Nikola into a
 <em>virtualenv</em> local to the site. Nikola is dropping support for Python 2 soon,
 so use Python 3.</p>
-<pre class="code bash"><a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-1"></a>virtualenv -p <span class="sb">`</span>which python3<span class="sb">`</span> .
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-2"></a>. bin/activate
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-3"></a>pip install nikola
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-4"></a>nikola init YOURSITE
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-5"></a><span class="nb">echo</span> <span class="s2">"</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-6"></a><span class="s2">    include/</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-7"></a><span class="s2">    lib/</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-8"></a><span class="s2">    pip-selfcheck.json</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-9"></a><span class="s2">    share/</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-10"></a><span class="s2">    YOURSITE/cache</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-11"></a><span class="s2">    YOURSITE/output</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-12"></a><span class="s2">    YOURSITE/__pycache__</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-13"></a><span class="s2">    YOURSITE/themes</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-14"></a><span class="s2">    YOURSITE/.doit.db</span>
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-15"></a><span class="s2">    "</span> &gt; .gitignore
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-16"></a>git add YOURSITE
-<a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-17"></a>git commit -a -m <span class="s2">"First commit"</span>
+<pre class="code bash"><a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-1"></a>virtualenv -p <span class="sb">`</span>which python3<span class="sb">`</span> .
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-2"></a>. bin/activate
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-3"></a>pip install nikola
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-4"></a>nikola init YOURSITE
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-5"></a><span class="nb">echo</span> <span class="s2">"</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-6"></a><span class="s2">    include/</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-7"></a><span class="s2">    lib/</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-8"></a><span class="s2">    pip-selfcheck.json</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-9"></a><span class="s2">    share/</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-10"></a><span class="s2">    YOURSITE/cache</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-11"></a><span class="s2">    YOURSITE/output</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-12"></a><span class="s2">    YOURSITE/__pycache__</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-13"></a><span class="s2">    YOURSITE/themes</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-14"></a><span class="s2">    YOURSITE/.doit.db</span>
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-15"></a><span class="s2">    "</span> &gt; .gitignore
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-16"></a>git add YOURSITE
+<a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-17"></a>git commit -a -m <span class="s2">"First commit"</span>
 </pre>
 <p>The default Nikola config assumes a <em>project</em> site (which publishes to the
 <tt class="docutils literal"><span class="pre">gh-pages</span></tt> branch), so needs to be updated to use the <em>user</em> format. Edit
 <tt class="docutils literal">YOURSITE/conf.py</tt>.</p>
-<pre class="code python"><a name="rest_code_0a2e8e204ab141dca624b6f1d4745861-1"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s">'site-src'</span> <span class="c"># Or whatever you picked.</span>
-<a name="rest_code_0a2e8e204ab141dca624b6f1d4745861-2"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'master'</span>
+<pre class="code python"><a name="rest_code_7475034642f54469b1ec73a10fcb2b61-1"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s">'site-src'</span> <span class="c"># Or whatever you picked.</span>
+<a name="rest_code_7475034642f54469b1ec73a10fcb2b61-2"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'master'</span>
 </pre>
 <p>Now you're ready to start adding posts and pages. To do this, you need to be
 in the <tt class="docutils literal">YOURSITE</tt> directory:</p>
-<pre class="code bash"><a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-1"></a><span class="nb">cd </span>YOURSITE
-<a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-2"></a>nikola new_post
-<a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-3"></a><span class="c"># Edit post</span>
-<a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-4"></a>nikola github_deploy
+<pre class="code bash"><a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-1"></a><span class="nb">cd </span>YOURSITE
+<a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-2"></a>nikola new_post
+<a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-3"></a><span class="c"># Edit post</span>
+<a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-4"></a>nikola github_deploy
 </pre>
 <p>Nikola will build the static site in the <tt class="docutils literal">output</tt> directory (by default) and
 push it to the <tt class="docutils literal">master</tt> branch at github.  Note however that the source will
 not be automatically committed. You need to do this. To commit everything in
 one go:</p>
-<pre class="code bash"><a name="rest_code_b595f09b440c4bfc8425565aa62ff82a-1"></a>git add .
-<a name="rest_code_b595f09b440c4bfc8425565aa62ff82a-2"></a>git commit -a -m <span class="s2">"New post"</span>
+<pre class="code bash"><a name="rest_code_639f9f11cf464126871a26f1c2ab3169-1"></a>git add .
+<a name="rest_code_639f9f11cf464126871a26f1c2ab3169-2"></a>git commit -a -m <span class="s2">"New post"</span>
 </pre>
 <p>In my case I also installed a theme (<tt class="docutils literal">nikola install_theme <span class="pre">material-theme</span></tt>),
-which requires another change to <tt class="docutils literal">conf.py</tt> to activate the theme. I also
-activated <a class="reference external" href="http://disqus.com">disqus</a> as comments provider.</p>
+and activated <a class="reference external" href="http://disqus.com">disqus</a> as comments provider. These
+require some more changes to <tt class="docutils literal">conf.py</tt>.</p>
 </div>
 </div>
     </div>

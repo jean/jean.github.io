@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Notes in Passing</title><link>http://jean.github.io/</link><description>Occasional Notes</description><atom:link rel="self" href="http://jean.github.io/rss.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 24 Dec 2015 12:47:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello world</title><link>http://jean.github.io/posts/hello-world/</link><dc:creator>Author</dc:creator><description>&lt;div&gt;&lt;p&gt;The first post might as well be a write-up of configuring this blog.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes in Passing</title><link>http://jean.github.io/</link><description>Occasional Notes</description><atom:link href="http://jean.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 24 Dec 2015 13:05:55 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello world</title><link>http://jean.github.io/posts/hello-world/</link><dc:creator>Author</dc:creator><description>&lt;div&gt;&lt;p&gt;The first post might as well be a write-up of configuring this blog.&lt;/p&gt;
 &lt;p&gt;In my case, I wanted to use Nikola for a Github Pages &lt;em&gt;user&lt;/em&gt; site.&lt;/p&gt;
 &lt;div class="section" id="setting-up-this-site"&gt;
 &lt;h2&gt;Setting up this site&lt;/h2&gt;
@@ -10,48 +10,48 @@
 source in. I picked &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;site-src&lt;/span&gt;&lt;/tt&gt;; the &lt;a class="reference external" href="https://getnikola.com/handbook.html#deploying-to-github"&gt;documentation suggests&lt;/a&gt; &lt;tt class="docutils literal"&gt;deploy&lt;/tt&gt;.
 Whatever name you choose, this will be the branch that you will keep checked
 out and use for authoring.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1c20dae9d684420d9183ad421d050d9e-1"&gt;&lt;/a&gt;git clone git@github.com:USER/YOURSITE.github.io.git
-&lt;a name="rest_code_1c20dae9d684420d9183ad421d050d9e-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;YOURSITE.github.io
-&lt;a name="rest_code_1c20dae9d684420d9183ad421d050d9e-3"&gt;&lt;/a&gt;git checkout -b site-src
-&lt;a name="rest_code_1c20dae9d684420d9183ad421d050d9e-4"&gt;&lt;/a&gt;git push origin site-src
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ebfc76d23a52490ea30e52af2076d086-1"&gt;&lt;/a&gt;git clone git@github.com:USER/YOURSITE.github.io.git
+&lt;a name="rest_code_ebfc76d23a52490ea30e52af2076d086-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;YOURSITE.github.io
+&lt;a name="rest_code_ebfc76d23a52490ea30e52af2076d086-3"&gt;&lt;/a&gt;git checkout -b site-src
+&lt;a name="rest_code_ebfc76d23a52490ea30e52af2076d086-4"&gt;&lt;/a&gt;git push origin site-src
 &lt;/pre&gt;&lt;p&gt;Create the Nikola site. In my case I prefer to install Nikola into a
 &lt;em&gt;virtualenv&lt;/em&gt; local to the site. Nikola is dropping support for Python 2 soon,
 so use Python 3.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-1"&gt;&lt;/a&gt;virtualenv -p &lt;span class="sb"&gt;`&lt;/span&gt;which python3&lt;span class="sb"&gt;`&lt;/span&gt; .
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-2"&gt;&lt;/a&gt;. bin/activate
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-3"&gt;&lt;/a&gt;pip install nikola
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-4"&gt;&lt;/a&gt;nikola init YOURSITE
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-6"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    include/&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-7"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    lib/&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-8"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    pip-selfcheck.json&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-9"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    share/&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-10"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/cache&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-11"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/output&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-12"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/__pycache__&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-13"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/themes&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-14"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/.doit.db&lt;/span&gt;
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-15"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    "&lt;/span&gt; &amp;gt; .gitignore
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-16"&gt;&lt;/a&gt;git add YOURSITE
-&lt;a name="rest_code_b2f0ff00229b4803830ebfa4fc8f5c50-17"&gt;&lt;/a&gt;git commit -a -m &lt;span class="s2"&gt;"First commit"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-1"&gt;&lt;/a&gt;virtualenv -p &lt;span class="sb"&gt;`&lt;/span&gt;which python3&lt;span class="sb"&gt;`&lt;/span&gt; .
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-2"&gt;&lt;/a&gt;. bin/activate
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-3"&gt;&lt;/a&gt;pip install nikola
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-4"&gt;&lt;/a&gt;nikola init YOURSITE
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-6"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    include/&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-7"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    lib/&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-8"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    pip-selfcheck.json&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-9"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    share/&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-10"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/cache&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-11"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/output&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-12"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/__pycache__&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-13"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/themes&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-14"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    YOURSITE/.doit.db&lt;/span&gt;
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-15"&gt;&lt;/a&gt;&lt;span class="s2"&gt;    "&lt;/span&gt; &amp;gt; .gitignore
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-16"&gt;&lt;/a&gt;git add YOURSITE
+&lt;a name="rest_code_aa9836b7fb4d449d981cec1d07b022ab-17"&gt;&lt;/a&gt;git commit -a -m &lt;span class="s2"&gt;"First commit"&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;The default Nikola config assumes a &lt;em&gt;project&lt;/em&gt; site (which publishes to the
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;gh-pages&lt;/span&gt;&lt;/tt&gt; branch), so needs to be updated to use the &lt;em&gt;user&lt;/em&gt; format. Edit
 &lt;tt class="docutils literal"&gt;YOURSITE/conf.py&lt;/tt&gt;.&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_0a2e8e204ab141dca624b6f1d4745861-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'site-src'&lt;/span&gt; &lt;span class="c"&gt;# Or whatever you picked.&lt;/span&gt;
-&lt;a name="rest_code_0a2e8e204ab141dca624b6f1d4745861-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'master'&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_7475034642f54469b1ec73a10fcb2b61-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'site-src'&lt;/span&gt; &lt;span class="c"&gt;# Or whatever you picked.&lt;/span&gt;
+&lt;a name="rest_code_7475034642f54469b1ec73a10fcb2b61-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'master'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Now you're ready to start adding posts and pages. To do this, you need to be
 in the &lt;tt class="docutils literal"&gt;YOURSITE&lt;/tt&gt; directory:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;YOURSITE
-&lt;a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-2"&gt;&lt;/a&gt;nikola new_post
-&lt;a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-3"&gt;&lt;/a&gt;&lt;span class="c"&gt;# Edit post&lt;/span&gt;
-&lt;a name="rest_code_998a3eac0b9c4f798b9ac7c64f1a0c86-4"&gt;&lt;/a&gt;nikola github_deploy
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;YOURSITE
+&lt;a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-2"&gt;&lt;/a&gt;nikola new_post
+&lt;a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-3"&gt;&lt;/a&gt;&lt;span class="c"&gt;# Edit post&lt;/span&gt;
+&lt;a name="rest_code_6a610fd8eb914ed1abbcd45342e919c9-4"&gt;&lt;/a&gt;nikola github_deploy
 &lt;/pre&gt;&lt;p&gt;Nikola will build the static site in the &lt;tt class="docutils literal"&gt;output&lt;/tt&gt; directory (by default) and
 push it to the &lt;tt class="docutils literal"&gt;master&lt;/tt&gt; branch at github.  Note however that the source will
 not be automatically committed. You need to do this. To commit everything in
 one go:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b595f09b440c4bfc8425565aa62ff82a-1"&gt;&lt;/a&gt;git add .
-&lt;a name="rest_code_b595f09b440c4bfc8425565aa62ff82a-2"&gt;&lt;/a&gt;git commit -a -m &lt;span class="s2"&gt;"New post"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_639f9f11cf464126871a26f1c2ab3169-1"&gt;&lt;/a&gt;git add .
+&lt;a name="rest_code_639f9f11cf464126871a26f1c2ab3169-2"&gt;&lt;/a&gt;git commit -a -m &lt;span class="s2"&gt;"New post"&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;In my case I also installed a theme (&lt;tt class="docutils literal"&gt;nikola install_theme &lt;span class="pre"&gt;material-theme&lt;/span&gt;&lt;/tt&gt;),
-which requires another change to &lt;tt class="docutils literal"&gt;conf.py&lt;/tt&gt; to activate the theme. I also
-activated &lt;a class="reference external" href="http://disqus.com"&gt;disqus&lt;/a&gt; as comments provider.&lt;/p&gt;
+and activated &lt;a class="reference external" href="http://disqus.com"&gt;disqus&lt;/a&gt; as comments provider. These
+require some more changes to &lt;tt class="docutils literal"&gt;conf.py&lt;/tt&gt;.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><guid>http://jean.github.io/posts/hello-world/</guid><pubDate>Thu, 24 Dec 2015 09:43:53 GMT</pubDate></item></channel></rss>
