@@ -5,5 +5,4 @@ share/
 notes/cache
 notes/output
 notes/__pycache__
-notes/themes
 notes/.doit.db
